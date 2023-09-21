@@ -9,19 +9,19 @@ XData UrlMap [ XMLNamespace = "http://www.intersystems.com/urlmap" ]
 </Routes>
 }
 
-ClassMethod GetAllAvailableUrls()
+ClassMethod GetAllAvailableUrls() As %Status
 {
 	do ..Write(##class(Implementation).AvailableEndPoints())
 	return $$$OK
 }
 
-ClassMethod GetTaskDetails(TaskName As %String = "")
+ClassMethod GetTaskDetails(TaskName As %String = "") As %Status
 {
-	if $$$LOWER(TaskName)="namespaces" {
-		do ..Write(##class(Implementation).GetNameSpaces())
+	if $$$LOWER(TaskName) = "namespaces" {
+		do ..Write(##class(EssentialREST.Implementation).GetNameSpaces())
 	}
 	else {
-		do ..Write(##class(Implementation).GetDetails(TaskName))
+		do ..Write(##class(EssentialREST.Implementation).GetDetails(TaskName))
 	}
 	return $$$OK
 }
