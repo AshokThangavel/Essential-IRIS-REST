@@ -1,5 +1,5 @@
 # Essential-IRIS-REST
-Essentail IRIS management portal data access in REST services
+Simple and Essentail IRIS management portal data access in REST services
 
 Get all available urls 
 http://localhost:52773/Essential/
