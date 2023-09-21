@@ -13,7 +13,7 @@ ClassMethod GetNameSpaces(GetAllInfo As %Boolean = 1) As %DynamicArray
 		do ##Class(%SYS.Namespace).GetAllNSInfo(namespace,.property)
 		set json = {"namespace":(namespace)}
 		set:GetAllInfo json.information= {
-					"globalDBDirectory" : ( property("GlobalDB","Directory")),
+					"globalDBDirectory" : ( $ZCVT(property("GlobalDB","Directory"),"O","HTML")),
 					"globalDBMounted"   : ( property("GlobalDB","Mounted") ),
 					"routineDBDirectory" : ( property("RoutineDB","Directory")),
 					"routineDBMounted"   : ( property("RoutineDB","Mounted") )
@@ -72,8 +72,9 @@ $Case($$$LOWER(TaskType),
 	)
 }
 
-ClassMethod AvailableEndPoints()
+ClassMethod AvailableEndPoints() As %DynamicArray
 {
+	return [{"endpoint":"/namespaces"},{"endpoint":"/database"},{"endpoint":"/x509"},{"endpoint":"/licenseservers"},{"endpoint":"/ldap"},{"endpoint":"/ssltls"},{"endpoint":"/docdb"},{"endpoint":"/webapp"},{"endpoint":"/clientapp"},{"endpoint":"/privilegedroutine"},{"endpoint":"/users"},{"endpoint":"/roles"},{"endpoint":"/resources"},{"endpoint":"/wqm"}]
 }
 
 ClassMethod ProcessSQLResultToJSON(result, Output response) As %Status
@@ -90,5 +91,6 @@ ClassMethod ProcessSQLResultToJSON(result, Output response) As %Status
 	}
 	return $$$OK
 }
+
 
 }
