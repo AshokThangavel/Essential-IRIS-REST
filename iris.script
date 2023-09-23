@@ -5,9 +5,9 @@
     Do ##class(Security.Users).UnExpireUserPasswords("*")
     ;
     write "Create web application..." 
-    set webName="/Essential" 
-    set webProperties("Dispatcher")="EssentialREST.Dispathcer" 
-    set webProperties("namespace")="user" 
+    set webName="/essential" 
+    set webProperties("DispatchClass")="EssentialREST.Dispatcher" 
+    set webProperties("NameSpace")="USER" 
     set webProperties("Enabled")=1 
     set webProperties("AuthEnabled")=32 
     set sc = ##Class(Security.Applications).Create(webName,.webProperties) 
