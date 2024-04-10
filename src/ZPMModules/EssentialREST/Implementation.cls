@@ -1,6 +1,6 @@
 Include %occErrors
 
-Class EssentialREST.Implementation Extends %RegisteredObject
+Class ZPMModules.EssentialREST.Implementation Extends %RegisteredObject
 {
 
 ClassMethod GetNameSpaces(GetAllInfo As %Boolean = 1) As %DynamicArray

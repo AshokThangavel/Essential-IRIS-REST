@@ -1,4 +1,4 @@
-Class EssentialREST.Base Extends %CSP.REST
+Class ZPMModules.EssentialREST.Base Extends %CSP.REST
 {
 ClassMethod OnPreDispatch(pUrl As %String, pMethod As %String, ByRef pContinue As %Boolean) As %Status
 {

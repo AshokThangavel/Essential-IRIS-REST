@@ -6,7 +6,7 @@
     ;
     write "Create web application..." 
     set webName="/essential" 
-    set webProperties("DispatchClass")="EssentialREST.Dispatcher" 
+    set webProperties("DispatchClass")="ZPMModules.EssentialREST.Dispatcher" 
     set webProperties("NameSpace")="USER" 
     set webProperties("Enabled")=1 
     set webProperties("AuthEnabled")=32 

@@ -1,4 +1,4 @@
-Class EssentialREST.Dispatcher Extends EssentialREST.Base
+Class ZPMModules.EssentialREST.Dispatcher Extends EssentialREST.Base
 {
 
 XData UrlMap [ XMLNamespace = "http://www.intersystems.com/urlmap" ]
